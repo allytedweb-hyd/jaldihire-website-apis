@@ -1,0 +1,331 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  /* background: #072C50; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+/* 
+.login-bg {
+    background-image: url(../images/jal.png);
+    background-repeat: no-repeat;
+    height: 640px;
+    background-position: center;
+    max-width: 100%;
+    object-fit: cover;
+    box-shadow: -1px 3px 5px 12px #eeeeee !important;
+    border-radius: 5px !important;
+} */
+
+.jal {
+  margin: 0 auto;
+  display: block;
+  max-width: 100%;
+  margin-top: 20px;
+  box-shadow: -1px 3px 5px 12px #eeeeee;
+  border-radius: 5px;
+}
+
+.login .container {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+}
+
+.jal-cls {
+  width: 140px;
+}
+
+.logo-ig {
+  margin-top: 8px;
+}
+
+.j-logo {
+  width: 48px;
+  padding-top: 5px;
+}
+
+.login .form-control {
+  border-bottom: 1px solid #8d8d8d !important;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  height: 25px;
+  font-size: 14px;
+  margin-bottom: 24px;
+  padding: 4px 12px 6px 6px;
+  width: 100%;
+}
+
+::placeholder {
+  color: #000 !important;
+  opacity: 1;
+}
+
+::-ms-input-placeholder {
+  color: #000 !important;
+}
+
+form {
+  width: 85%;
+}
+
+.form-flex {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-left: 90px;
+  position: relative;
+  top: 185px;
+}
+
+.form-flex label {
+  display: inline-block;
+  margin-bottom: 0px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+.account {
+  right: 0;
+  top: 153px;
+  text-align: center;
+  position: relative;
+  left: 45px;
+}
+
+.account h4 {
+  font-size: 34px;
+  font-family: "Inter", sans-serif;
+  color: #db9f05;
+  font-weight: 600;
+}
+
+.account p {
+  font-size: 17px;
+  font-family: "Poppins", sans-serif;
+  color: #072c50;
+  font-weight: 400;
+}
+
+.jal-btn button {
+  color: #fff;
+  display: inline-block;
+  padding: 5px;
+  background-color: #f6b042;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 17px;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.stepp {
+  text-align: center;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+  color: #000;
+  margin-top: 12px;
+}
+
+.password-content {
+  position: relative;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  background-image: url("../images/visible.png");
+  background-size: cover;
+}
+
+.eye-icon.hide-password {
+  background-image: url("../images/hide.png");
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1150px) {
+  .account {
+    top: 30px;
+  }
+
+  .form-flex {
+    top: 35px;
+  }
+}
+
+@media only screen and (min-width: 901px) and (max-width: 1024px) {
+  .account {
+    right: 0;
+    top: 20px;
+  }
+
+  .form-flex {
+    top: 16px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 900px) {
+  .login .form-control {
+    border-bottom: 1px solid #8d8d8d !important;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    height: 19px;
+    width: 100%;
+    font-size: 10px;
+  }
+
+  .account {
+    right: 0;
+    top: 8px;
+    left: 45px;
+  }
+
+  .account h4 {
+    line-height: normal;
+    font-size: 20px;
+  }
+
+  .account p {
+    font-size: 13px;
+    line-height: normal;
+    margin-bottom: 10px;
+  }
+
+  .form-flex {
+    top: 10px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .jal {
+    display: none;
+  }
+
+  body {
+    background: #072c50;
+  }
+
+  .account p {
+    color: #fff;
+  }
+
+  .stepp {
+    color: #fff;
+  }
+
+  .logo-ig {
+    text-align: center;
+  }
+
+  .account {
+    right: 0;
+    top: 75px;
+    left: 0px;
+  }
+
+  .form-flex {
+    padding-left: 0px;
+    top: 90px;
+  }
+
+  .login .form-control {
+    height: 35px;
+    padding: 9px 12px 6px 6px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+
+  .jal-btn button {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+}
+
+
+
+
+
+.form-horizontal {
+  width: 320px;
+  background-color: #ffffff;
+  padding: 25px 38px;
+  border-radius: 12px;
+  box-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+}
+.control-label {
+  text-align: left !important;
+  padding-bottom: 4px;
+}
+.progress {
+  height: 3px !important;
+  margin-bottom: 15px;
+}
+.form-group {
+  margin-bottom: 10px;
+}
+.show-pass{
+  position: absolute;
+  top: 1%;
+  right: 5%;
+}
+.progress-bar-danger {
+  background-color: #e90f10;
+}
+.progress-bar-warning{
+  background-color: #ffad00;
+}
+.progress-bar-success{
+  background-color: #02b502;
+}
+.login-btn{
+  width: 180px !important;
+  background-image: linear-gradient(to right, #f6086e , #ff133a) !important;
+  font-size: 18px;
+  color: #fff;
+  margin: 0 auto 5px;
+  padding: 8px 0; 
+}
+.login-btn:hover{
+  background-image: linear-gradient(to right, rgba(255, 0, 111, 0.8) , rgba(247, 2, 43, 0.8)) !important;
+  color: #fff !important;
+}
+.fa-eye{
+  color: #022255;
+  cursor: pointer;
+}
+.ex-account p a{
+  color: #f6086e;
+  text-decoration: underline;
+}
+.fa-circle{
+  font-size: 6px;  
+}
+.fa-check{
+  color: #02b502;
+}

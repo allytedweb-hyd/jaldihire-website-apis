@@ -1,0 +1,65 @@
+[12-Jun-2026 06:46:51 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Field 'is_logged_in' doesn't have a default value in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php:123
+Stack trace:
+#0 /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php(123): mysqli_query()
+#1 {main}
+  thrown in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php on line 123
+[12-Jun-2026 06:50:11 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Field 'is_logged_in' doesn't have a default value in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php:123
+Stack trace:
+#0 /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php(123): mysqli_query()
+#1 {main}
+  thrown in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php on line 123
+[12-Jun-2026 06:51:53 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Field 'is_logged_in' doesn't have a default value in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php:123
+Stack trace:
+#0 /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php(123): mysqli_query()
+#1 {main}
+  thrown in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php on line 123
+[12-Jun-2026 07:00:16 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Field 'is_logged_in' doesn't have a default value in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php:158
+Stack trace:
+#0 /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php(158): mysqli_query()
+#1 {main}
+  thrown in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php on line 158
+[12-Jun-2026 07:01:32 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Field 'is_logged_in' doesn't have a default value in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php:158
+Stack trace:
+#0 /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php(158): mysqli_query()
+#1 {main}
+  thrown in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php on line 158
+[12-Jun-2026 07:06:38 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Field 'is_logged_in' doesn't have a default value in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php:123
+Stack trace:
+#0 /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php(123): mysqli_query()
+#1 {main}
+  thrown in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php on line 123
+[12-Jun-2026 07:56:22 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Field 'is_logged_in' doesn't have a default value in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php:123
+Stack trace:
+#0 /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php(123): mysqli_query()
+#1 {main}
+  thrown in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php on line 123
+[12-Jun-2026 07:57:00 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Field 'is_logged_in' doesn't have a default value in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php:123
+Stack trace:
+#0 /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php(123): mysqli_query()
+#1 {main}
+  thrown in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php on line 123
+[12-Jun-2026 07:57:50 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Field 'is_logged_in' doesn't have a default value in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php:123
+Stack trace:
+#0 /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php(123): mysqli_query()
+#1 {main}
+  thrown in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php on line 123
+[12-Jun-2026 08:16:41 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Field 'is_logged_in' doesn't have a default value in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php:149
+Stack trace:
+#0 /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php(149): mysqli_query()
+#1 {main}
+  thrown in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php on line 149
+[12-Jun-2026 08:19:42 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Field 'is_logged_in' doesn't have a default value in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php:168
+Stack trace:
+#0 /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php(168): mysqli_query()
+#1 {main}
+  thrown in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/postapi/RmApis/createrm.php on line 168
+[12-Jun-2026 08:20:33 UTC] PHP Deprecated:  Non-canonical cast (boolean) is deprecated, use the (bool) cast instead in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/vendor/phpmailer/class.phpmailer.php on line 660
+[12-Jun-2026 08:20:33 UTC] PHP Deprecated:  Non-canonical cast (boolean) is deprecated, use the (bool) cast instead in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/vendor/phpmailer/class.phpmailer.php on line 1112
+[12-Jun-2026 08:20:33 UTC] PHP Deprecated:  Non-canonical cast (boolean) is deprecated, use the (bool) cast instead in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/vendor/phpmailer/class.phpmailer.php on line 1126
+[12-Jun-2026 08:20:33 UTC] PHP Deprecated:  Non-canonical cast (boolean) is deprecated, use the (bool) cast instead in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/vendor/phpmailer/class.phpmailer.php on line 1144
+[12-Jun-2026 08:20:33 UTC] PHP Deprecated:  Non-canonical cast (boolean) is deprecated, use the (bool) cast instead in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/vendor/phpmailer/class.phpmailer.php on line 1157
+[12-Jun-2026 08:20:33 UTC] PHP Deprecated:  Non-canonical cast (integer) is deprecated, use the (int) cast instead in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/vendor/phpmailer/class.phpmailer.php on line 1678
+[12-Jun-2026 08:20:33 UTC] PHP Deprecated:  Non-canonical cast (boolean) is deprecated, use the (bool) cast instead in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/vendor/phpmailer/class.phpmailer.php on line 1818
+[12-Jun-2026 08:20:33 UTC] PHP Deprecated:  Non-canonical cast (boolean) is deprecated, use the (bool) cast instead in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/vendor/phpmailer/class.phpmailer.php on line 2868
+[12-Jun-2026 08:20:33 UTC] PHP Deprecated:  Non-canonical cast (boolean) is deprecated, use the (bool) cast instead in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/vendor/phpmailer/class.phpmailer.php on line 3972
+[12-Jun-2026 08:20:33 UTC] PHP Deprecated:  Non-canonical cast (boolean) is deprecated, use the (bool) cast instead in /home/jaldihire-site/htdocs/www.jaldihire.com/employer_api/api/vendor/phpmailer/class.smtp.php on line 736

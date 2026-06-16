@@ -1,0 +1,283 @@
+[2026-02-16 07:02:32] === API CALL STARTED ===
+------------------------
+[2026-02-16 07:02:32] Request Method
+Data: POST
+------------------------
+[2026-02-16 07:02:32] Request URI
+Data: /admin_api/api/post-apis/job_assign_recruiter.php
+------------------------
+[2026-02-16 07:02:32] Query String
+Data: 
+------------------------
+[2026-02-16 07:02:32] All Request Headers
+Data: Array
+(
+    [Priority] => u=1, i
+    [Accept-Language] => en-US,en;q=0.9
+    [Accept-Encoding] => gzip, deflate, br, zstd
+    [Sec-Fetch-Dest] => empty
+    [Sec-Fetch-Mode] => cors
+    [Sec-Fetch-Site] => same-site
+    [Origin] => https://admin.jaldihire.com
+    [Sec-Ch-Ua-Mobile] => ?0
+    [Content-Type] => application/json
+    [Sec-Ch-Ua] => "Not(A:Brand";v="8", "Chromium";v="144", "Google Chrome";v="144"
+    [Accept] => application/json, text/plain, */*
+    [User-Agent] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36
+    [Sec-Ch-Ua-Platform] => "Windows"
+    [Content-Length] => 77
+    [Authorization] => Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMjgiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3NzEyMjA0OTQsIm5iZiI6MTc3MTIyMDQ5NCwiZXhwIjoxNzcxMzA2ODk0fQ.w3190ChRECpPEueUB0RNdr1bPFvk6Ugys3KTk4R7rB0
+    [Host] => jaldihire.com
+)
+
+------------------------
+[2026-02-16 07:02:32] Database connection status
+Data: Connected
+------------------------
+[2026-02-16 07:02:32] Raw Authorization Header
+Data: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMjgiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3NzEyMjA0OTQsIm5iZiI6MTc3MTIyMDQ5NCwiZXhwIjoxNzcxMzA2ODk0fQ.w3190ChRECpPEueUB0RNdr1bPFvk6Ugys3KTk4R7rB0
+------------------------
+[2026-02-16 07:02:32] Extracted Token (first 20 chars)
+Data: eyJ0eXAiOiJKV1QiLCJh...
+------------------------
+[2026-02-16 07:02:32] Attempting to verify token with TokenVerify()
+------------------------
+[2026-02-16 07:02:32] TokenVerify result
+Data: Array
+(
+    [status] => 1
+    [userId] => 
+    [role] => Admin
+)
+
+------------------------
+[2026-02-16 07:02:32] Token verification successful
+------------------------
+[2026-02-16 07:02:32] Raw PHP Input
+Data: {"to":"jobs","assignedJobId":"1","assignedRecruiterId":["2"],"admin_Id":"28"}
+------------------------
+[2026-02-16 07:02:32] POST array
+Data: Array
+(
+)
+
+------------------------
+[2026-02-16 07:02:32] REQUEST array
+Data: Array
+(
+)
+
+------------------------
+[2026-02-16 07:02:32] Decoded JSON data
+Data: stdClass Object
+(
+    [to] => jobs
+    [assignedJobId] => 1
+    [assignedRecruiterId] => Array
+        (
+            [0] => 2
+        )
+
+    [admin_Id] => 28
+)
+
+------------------------
+[2026-02-16 07:02:32] Extracted data
+Data: Array
+(
+    [assign] => jobs
+    [assignedJobId] => 1
+    [assignedRecruiterId] => Array
+        (
+            [0] => 2
+        )
+
+    [agentid] => not set
+    [adminId] => not set
+)
+
+------------------------
+[2026-02-16 07:02:32] Job status query
+Data: SELECT * FROM tbl_post_a_job WHERE id='1' AND job_status='closed' AND close_status=1
+------------------------
+[2026-02-16 07:02:32] Processing recruiter
+Data: Array
+(
+    [index] => 0
+    [recruiter_id] => 2
+)
+
+------------------------
+[2026-02-16 07:02:32] Check existing assignment query
+Data: SELECT * FROM assign_job_recruiter WHERE assigned_job='1' AND assigned_reqruiter='2' AND status=1
+------------------------
+[2026-02-16 07:02:32] Existing assignments count
+Data: 0
+------------------------
+[2026-02-16 07:02:32] Recruiter data
+Data: Array
+(
+    [allyted_member_id] => 2
+    [recruiter_auto_create_id] => TEAMRECRU2
+    [function] => 
+    [department] => Staffing
+    [designation] => assistant
+    [reportingTo] => self
+    [role] => Recruiter
+    [technology] => SAP
+    [skills] => SAP ABAP
+    [member_name] => recruiter teja
+    [profile_img] => 
+    [member_mobile] => 9966233450
+    [member_email] => saitejamm111@gmail.com
+    [forgot_otp] => 0
+    [password] => $2y$12$32c8yBLdXUotesPZ1a15m.d4j1zrA2RB4pflNkIi1X109Gcc5gO6.
+    [validity] => 2026-09-10T13:09
+    [notification_sent] => 0
+    [industry_type] => 0
+    [created_by] => 1
+    [created_on] => 2026-02-10 07:40:08
+    [updated_on] => 2026-02-10 07:40:08
+    [status] => 1
+)
+
+------------------------
+[2026-02-16 07:02:32] Recruiter processing summary
+Data: Array
+(
+    [finalRecuitersList] => Array
+        (
+            [0] => 2
+        )
+
+    [existStatus] => Array
+        (
+        )
+
+    [nonExistStatus] => Array
+        (
+            [0] => recruiter teja
+        )
+
+)
+
+------------------------
+[2026-02-16 07:02:32] Assigning job to recruiter
+Data: Array
+(
+    [job_id] => 1
+    [recruiter_id] => 2
+)
+
+------------------------
+[2026-02-16 07:02:32] Insert query
+Data: INSERT INTO assign_job_recruiter SET assigned_job='1', assigned_reqruiter='2',  status=1
+------------------------
+[2026-02-16 07:02:32] Recruiter email data
+Data: Array
+(
+    [allyted_member_id] => 2
+    [recruiter_auto_create_id] => TEAMRECRU2
+    [function] => 
+    [department] => Staffing
+    [designation] => assistant
+    [reportingTo] => self
+    [role] => Recruiter
+    [technology] => SAP
+    [skills] => SAP ABAP
+    [member_name] => recruiter teja
+    [profile_img] => 
+    [member_mobile] => 9966233450
+    [member_email] => saitejamm111@gmail.com
+    [forgot_otp] => 0
+    [password] => $2y$12$32c8yBLdXUotesPZ1a15m.d4j1zrA2RB4pflNkIi1X109Gcc5gO6.
+    [validity] => 2026-09-10T13:09
+    [notification_sent] => 0
+    [industry_type] => 0
+    [created_by] => 1
+    [created_on] => 2026-02-10 07:40:08
+    [updated_on] => 2026-02-10 07:40:08
+    [status] => 1
+)
+
+------------------------
+[2026-02-16 07:02:32] Job data
+Data: Array
+(
+    [id] => 1
+    [auto_create_jobid] => JHALLYT1
+    [employer_id] => 1
+    [job_status] => New
+    [role_id] => 2
+    [job_title] => sap mm
+    [technology] => SAP
+    [primary_skill] => SAP ABAP
+    [skill] => SAP BW ,SAP FT,SAP Analytics ,SAP HANA
+    [role] => Panel member
+    [job_location] => Pan India
+    [duration] => 9:30 aM to 8 pM
+    [price] => 10
+    [on_boarding_time] => 
+    [work_mode] => Hybrid
+    [clientName] => infosys
+    [job_type] => Full Time
+    [job_description] => sap mm
+    [project_name] => project 1
+    [no_of_positions] => 1
+    [experience] => 1-3
+    [project_Type] => Implementation
+    [industry_Type] => 
+    [qualification] => Graduation
+    [availability] =>  < one month
+    [posted_by_company] => allyted
+    [company_image] => 698ad89e387f3.png
+    [company_Id] => JDEMPALLY1
+    [assign_role] => 0
+    [created_by] => 1
+    [created_by_role] => RM
+    [created_at] => 0
+    [cron_last_update] => 2026-02-16 11:09:24
+    [over_due_days] => 0
+    [publish_date] => 0
+    [audio] => 6992ad8cdb4dc.mp3
+    [created_date] => 2026-02-16 11:09:24
+    [updated_date] => 2026-02-16 05:39:24
+    [status] => 1
+    [close_status] => 0
+    [closed_by_id] => 0
+    [closed_by_role] => 0
+)
+
+------------------------
+[2026-02-16 07:02:32] Insert successful
+Data: Array
+(
+    [affected_rows] => 1
+)
+
+------------------------
+[2026-02-16 07:02:32] Notification check
+Data: Array
+(
+    [status] => 
+)
+
+------------------------
+[2026-02-16 07:02:34] Email send attempt
+Data: Array
+(
+    [to] => saitejamm111@gmail.com
+    [success] => 
+)
+
+------------------------
+[2026-02-16 07:02:34] Final response sent
+Data: Array
+(
+    [status] => 1
+    [message] =>  Assigned to recruiter teja Successfully
+)
+
+------------------------
+[2026-02-16 07:02:34] === API CALL ENDED ===
+------------------------

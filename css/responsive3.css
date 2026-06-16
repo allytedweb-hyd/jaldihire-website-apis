@@ -1,0 +1,182 @@
+@media only screen and (max-width: 5000px) {
+
+    .boxed_wrapper {
+      overflow-x: hidden;
+    }
+  
+  }
+
+  @media only screen and (max-width: 992px){
+  .jaldi-btn {
+      padding: 8px 20px;
+      font-size: 15px;
+      margin-left: 20px;
+  }
+  }
+  @media only screen and (max-width: 991px) {
+    .menu-area .mobile-nav-toggler {
+      display: block;
+      margin-top: 38px;
+      padding: 10px;
+    }
+  
+    .main-menu {
+      display: none !important;
+    }
+  }
+
+ 
+@media only screen and (max-width: 768px) {
+    .caruselCardSec .mobile {
+        width: 45%;
+      }
+
+}
+@media only screen and (max-width: 767px) {
+    .caruselCardSec .mobile {
+        width: 58%;
+      }
+}
+@media only screen and (max-width: 675px) {
+
+}
+
+@media only screen and (max-width: 575px) {
+    .mobile-menu .contact-info h4 {
+      margin-bottom: 8px;
+    }
+  
+    .main-header .outer-container .logo-box .logo {
+      position: relative;
+      padding: 30px 0px 30px 0px;
+    }
+    .main-footer .footer-top .about-widget .text {
+        font-size: 15px;
+        line-height: 23px;
+      }
+    
+      .main-footer.style-five .footer-top .widget-title {
+        font-size: 20px;
+        margin-bottom: 8px;
+        padding-bottom: 0px;
+      }
+    
+      .main-footer .footer-top .links-widget .list li a {
+        font-size: 15px;
+      }
+    
+      .main-footer.style-five .footer-top .contact-widget .contact-info li {
+        font-size: 15px;
+        margin-bottom: 4px;
+      }
+     .main-footer {
+       padding-top: 40px;
+    }
+    .convert-head h1 {
+      font-size: 25px;
+      line-height: 35px;
+    }
+    .padd-1 {
+      padding-top: 140px;
+      padding-bottom: 20px;
+    }
+    .convert-head p {
+      font-size: 15px;
+      line-height: 22px;
+      width:100%;
+      margin-top: 9px;
+    }
+    .slideanim1 {
+     width: 60px;
+     height: 60px;
+    }
+    .slideanim2 {
+     width: 80px;
+     height: 80px;
+    }
+    .slideanim3 {
+     width: 100px;
+     height: 100px;
+    }
+    .slideanim4 {
+     width: 100px;
+     height: 100px;
+    }
+    .container1 {
+     width: 100% !important;
+     padding-right: 15px;
+     padding-left: 15px;
+     margin-right: auto;
+     margin-left: auto;
+    }
+    .container-sp {
+     width: 100% !important;
+     padding-right: 15px;
+     padding-left: 15px;
+     margin-right: auto;
+     margin-left: auto;
+    }
+    .container-our-profile{
+     width: 100% !important;
+     padding-right: 15px;
+     padding-left: 15px;
+     margin-right: auto;
+     margin-left: auto;
+    }
+    
+    .spiderBackG h2 {
+     font-size: 25px;
+     line-height: 35px;
+    }
+    .spiderBackG p {
+     margin-top: 10px;
+     margin-bottom: 24px;
+    }
+    .clientsImg{
+     margin-top: 20px;
+    }
+    .prop-content h1 {
+     font-size: 25px;
+    } 
+    .prop-content p {
+     font-size: 13px;
+     width:100%;
+     line-height: 25px;
+     margin-bottom: 30px;
+    -webkit-text-stroke: 0.6px #000;
+    }
+    .interviewsec {
+      padding: 20px 0px 70px 0px;
+    }
+    .candidate-sec {
+     padding-top: 20px;
+     padding-bottom: 30px;
+    }
+    .cand-profile h2 {
+     font-size: 25px;
+     line-height: 30px;
+    }
+    .cand-profile p {
+     font-size: 14px;
+     margin-top: 5px;
+     line-height: 25px;
+     margin-bottom: 10px;
+    }
+    .caruselCardSec .mobile{
+      width:100%;
+    }
+
+}
+    
+
+@media only screen and (max-width: 575px) {
+
+}
+
+@media only screen and (max-width: 425px) {
+
+}
+
+@media only screen and (max-width: 375px) {
+
+}
