@@ -89,7 +89,7 @@ if (isset($json) && !empty($json)) {
     $mail = new PHPMailer;
 
     $mail->isSMTP(); // Set mailer to use SMTP
-    $mail->Host = 'smtp.hostinger.com'; // Specify main and backup SMTP servers
+    $mail->Host = 'smtpout.secureserver.net'; // Specify main and backup SMTP servers
     $mail->SMTPAuth = true; // Enable SMTP authentication
     $mail->Username = 'jaldihireteam@mmworkspace.com'; // SMTP username
     $mail->Password = 'Jaldihire@321$#'; // SMTP password

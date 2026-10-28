@@ -16,11 +16,12 @@ include 'mail_templates.php';
 
 
 // Initialize PHPMailer
-function initializePhpMailer() {
+function initializePhpMailer()
+{
     $mail = new PHPMailer(true);
     try {
         $mail->isSMTP();
-        $mail->Host = 'smtp.hostinger.com';
+        $mail->Host = 'smtpout.secureserver.net';
         $mail->SMTPAuth = true;
         $mail->Username = 'jaldihireteam@mmworkspace.com';
         $mail->Password = 'Jaldihire@321$#';
@@ -61,7 +62,8 @@ function initializePhpMailer() {
 //     file_put_contents($icsFile, $icsContent);
 //     return $icsFile;
 // }
-function generateGoogleICS($eventDetails, $recipientType) {
+function generateGoogleICS($eventDetails, $recipientType)
+{
     $meetLink = $recipientType === 'applicant' ? $eventDetails['applicant_meet_link'] : $eventDetails['interviewer_meet_link'];
 
     $icsContent = "BEGIN:VCALENDAR\r\n";
@@ -75,7 +77,7 @@ function generateGoogleICS($eventDetails, $recipientType) {
     $icsContent .= "DTEND:" . gmdate('Ymd\THis\Z', strtotime($eventDetails['end'])) . "\r\n";
     $icsContent .= "SUMMARY:Interview Invitation\r\n";
     $icsContent .= "DESCRIPTION:Join the interview via Jaldihire: " . $meetLink . "\r\n";
-    $icsContent .= "LOCATION:Jaldihire\r\n";  
+    $icsContent .= "LOCATION:Jaldihire\r\n";
     $icsContent .= "ATTENDEE;CN=$recipientType;RSVP=TRUE:mailto:" . $eventDetails[$recipientType . '_email'] . "\r\n";
     $icsContent .= "ORGANIZER;CN=Jaldhi Hire:mailto:jaldihireteam@mmworkspace.com\r\n";
     $icsContent .= "CLASS:PUBLIC\r\n";
@@ -118,7 +120,8 @@ function generateGoogleICS($eventDetails, $recipientType) {
 //     file_put_contents($icsFile, $icsContent);
 //     return $icsFile;
 // }
-function generateOutlookICS($eventDetails, $recipientType) {
+function generateOutlookICS($eventDetails, $recipientType)
+{
     $meetLink = $recipientType === 'applicant' ? $eventDetails['applicant_meet_link'] : $eventDetails['interviewer_meet_link'];
 
     $icsContent = "BEGIN:VCALENDAR\r\n";
@@ -132,7 +135,7 @@ function generateOutlookICS($eventDetails, $recipientType) {
     $icsContent .= "DTEND:" . gmdate('Ymd\THis\Z', strtotime($eventDetails['end'])) . "\r\n";
     $icsContent .= "SUMMARY:Interview Invitation\r\n";
     $icsContent .= "DESCRIPTION:Join the interview via Jaldihire: " . $meetLink . "\r\n";
-    $icsContent .= "LOCATION:Jaldihire\r\n";  
+    $icsContent .= "LOCATION:Jaldihire\r\n";
     $icsContent .= "ATTENDEE;CN=$recipientType;RSVP=TRUE:mailto:" . $eventDetails[$recipientType . '_email'] . "\r\n";
     $icsContent .= "ORGANIZER;CN=Jaldhi Hire:mailto:info@jaldihire.com\r\n";
     $icsContent .= "CLASS:PUBLIC\r\n";
@@ -148,7 +151,8 @@ function generateOutlookICS($eventDetails, $recipientType) {
 }
 
 
-function sendEventEmail($recipientEmail, $recipientType, $eventDetails) {
+function sendEventEmail($recipientEmail, $recipientType, $eventDetails)
+{
     try {
         $mail = initializePhpMailer();
         $mail->setFrom('jaldihireteam@mmworkspace.com', 'JALDHI HIRE');
@@ -195,13 +199,13 @@ function sendEventEmail($recipientEmail, $recipientType, $eventDetails) {
         //     $icsFilePath = generateGoogleICS($eventDetails); // Default to Google ICS
         // }
         $domain = substr(strrchr($recipientEmail, "@"), 1);
-if (strpos($domain, 'gmail.com') !== false) {
-    $icsFilePath = generateGoogleICS($eventDetails, $recipientType);
-} elseif (strpos($domain, 'outlook.com') !== false || strpos($domain, 'hotmail.com') !== false) {
-    $icsFilePath = generateOutlookICS($eventDetails, $recipientType);
-} else {
-    $icsFilePath = generateGoogleICS($eventDetails, $recipientType); // Default to Google ICS
-}
+        if (strpos($domain, 'gmail.com') !== false) {
+            $icsFilePath = generateGoogleICS($eventDetails, $recipientType);
+        } elseif (strpos($domain, 'outlook.com') !== false || strpos($domain, 'hotmail.com') !== false) {
+            $icsFilePath = generateOutlookICS($eventDetails, $recipientType);
+        } else {
+            $icsFilePath = generateGoogleICS($eventDetails, $recipientType); // Default to Google ICS
+        }
 
 
         // Attach the correct ICS file

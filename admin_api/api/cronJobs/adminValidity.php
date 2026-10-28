@@ -70,7 +70,7 @@ while ($each = mysqli_fetch_assoc($queryVal)) {
 
             $mail = new PHPMailer;
             $mail->isSMTP();
-            $mail->Host = 'smtp.hostinger.com';
+            $mail->Host = 'smtpout.secureserver.net';
             $mail->SMTPAuth = true;
             $mail->Username = 'jaldihireteam@mmworkspace.com';
             $mail->Password = 'Jaldihire@321$#';

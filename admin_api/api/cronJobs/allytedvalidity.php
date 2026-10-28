@@ -40,7 +40,7 @@ while ($each = mysqli_fetch_assoc($queryVal)) {
 
                 $mail = new PHPMailer;
                 $mail->isSMTP();
-                $mail->Host = 'smtp.hostinger.com';
+                $mail->Host = 'smtpout.secureserver.net';
                 $mail->SMTPAuth = true;
                 $mail->Username = 'jaldihireteam@mmworkspace.com';
                 $mail->Password = 'Jaldihire@321$#';
@@ -67,7 +67,7 @@ while ($each = mysqli_fetch_assoc($queryVal)) {
                 $InsertadminNotification = mysqli_query($con, "INSERT INTO tbl_notification SET notify_to='Admin',notification_text='" . $admintext . "',activity='Masters',notification_type='info',admin_id='" . $adminId . "'");
                 $mail = new PHPMailer;
                 $mail->isSMTP();
-                $mail->Host = 'smtp.hostinger.com';
+                $mail->Host = 'smtpout.secureserver.net';
                 $mail->SMTPAuth = true;
                 $mail->Username = 'jaldihireteam@mmworkspace.com';
                 $mail->Password = 'Jaldihire@321$#';

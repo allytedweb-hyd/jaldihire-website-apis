@@ -22,10 +22,10 @@ require_once 'mail_function.php';
 $mail = new PHPMailer();
 // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 $mail->isSMTP();
-$mail->Host = 'smtp.hostinger.com';
+$mail->Host = 'smtpout.secureserver.net';
 $mail->SMTPAuth = true;
-$mail->Username = 'work@mmworkspace.com';
-$mail->Password = 'Work@321#';
+$mail->Username = 'info@allyted.com';
+$mail->Password = 'Allyted@2026';
 // $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 $mail->Port = 587;
 return $mail;
@@ -37,19 +37,18 @@ function scheduleApplicant($userEmail, $subject, $body)
 
     try {
         global $mail;
-        $mail->setFrom('work@mmworkspace.com', 'Jaldi Hire');
+        $mail->setFrom('info@allyted.com', 'Jaldi Hire');
 
 
         $mail->addAddress($userEmail);
 
-        $mail->addReplyTo('work@mmworkspace.com', 'Information');
+        $mail->addReplyTo('info@allyted.com', 'Information');
 
         $mail->isHTML(true);
         $mail->Subject = $subject;
         $mail->Body = applicantSchedule($body);
         $mail->send();
     } catch (Exception $e) {
-
     }
 }
 
@@ -60,19 +59,18 @@ function recruiter($userEmail, $subject, $body)
         // $mail = initializePhpMailer();
         global $mail;
 
-        $mail->setFrom('work@mmworkspace.com', 'Jaldi Hire');
+        $mail->setFrom('info@allyted.com', 'Jaldi Hire');
 
         foreach ($userEmail as $email) {
             $mail->addAddress($email);
         }
-        $mail->addReplyTo('work@mmworkspace.com', 'Information');
+        $mail->addReplyTo('info@allyted.com', 'Information');
 
         $mail->isHTML(true);
         $mail->Subject = $subject;
         $mail->Body = recruiterBody($body);
         $mail->send();
     } catch (Exception $e) {
-
     }
 }
 
@@ -83,19 +81,18 @@ function jobPstEmpMail($userEmail, $subject, $body)
         // $mail = initializePhpMailer();
         global $mail;
 
-        $mail->setFrom('work@mmworkspace.com', 'Jaldi Hire');
+        $mail->setFrom('info@allyted.com', 'Jaldi Hire');
 
         // foreach ($userEmail as $email) {
         $mail->addAddress($userEmail);
         // }
-        $mail->addReplyTo('work@mmworkspace.com', 'Information');
+        $mail->addReplyTo('info@allyted.com', 'Information');
 
         $mail->isHTML(true);
         $mail->Subject = $subject;
         $mail->Body = jobPstMail($body);
         $mail->send();
     } catch (Exception $e) {
-
     }
 }
 
@@ -106,19 +103,18 @@ function jobPstwithoutagent($userEmail, $subject, $body)
         // $mail = initializePhpMailer();
         global $mail;
 
-        $mail->setFrom('work@mmworkspace.com', 'Jaldi Hire');
+        $mail->setFrom('info@allyted.com', 'Jaldi Hire');
 
         // foreach ($userEmail as $email) {
         $mail->addAddress($userEmail);
         // }
-        $mail->addReplyTo('work@mmworkspace.com', 'Information');
+        $mail->addReplyTo('info@allyted.com', 'Information');
 
         $mail->isHTML(true);
         $mail->Subject = $subject;
         $mail->Body = agentwithoutjob($body);
         $mail->send();
     } catch (Exception $e) {
-
     }
 }
 function jobPstwithagent($userEmail, $subject, $body)
@@ -128,20 +124,17 @@ function jobPstwithagent($userEmail, $subject, $body)
         // $mail = initializePhpMailer();
         global $mail;
 
-        $mail->setFrom('work@mmworkspace.com', 'Jaldi Hire');
+        $mail->setFrom('info@allyted.com', 'Jaldi Hire');
 
         // foreach ($userEmail as $email) {
         $mail->addAddress($userEmail);
         // }
-        $mail->addReplyTo('work@mmworkspace.com', 'Information');
+        $mail->addReplyTo('info@allyted.com', 'Information');
 
         $mail->isHTML(true);
         $mail->Subject = $subject;
         $mail->Body = agentwithjob($body);
         $mail->send();
     } catch (Exception $e) {
-
     }
 }
-
-?>

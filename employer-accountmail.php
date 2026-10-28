@@ -66,7 +66,7 @@ function employerSignUp()
     $mail = new PHPMailer(true);
     try {
       $mail->isSMTP();
-      $mail->Host = 'smtp.hostinger.com';
+      $mail->Host = 'smtpout.secureserver.net';
       $mail->SMTPAuth = true;
       $mail->Username = 'jaldihire@mmworkspace.com';
       $mail->Password = 'Jaldihire@321$#';

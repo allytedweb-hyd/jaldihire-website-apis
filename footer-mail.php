@@ -12,47 +12,47 @@ require 'vendor/autoload.php';
 
 function SendFooterMail()
 {
-    global $con;
+  global $con;
 
-    // Read the JSON input
-    $input = json_decode(file_get_contents("php://input"), true);
+  // Read the JSON input
+  $input = json_decode(file_get_contents("php://input"), true);
 
-    // Sanitize input
-    $type = mysqli_real_escape_string($con, $input['type']);
-    $email = mysqli_real_escape_string($con, $input['email']);
-    $number = mysqli_real_escape_string($con, $input['number']);
+  // Sanitize input
+  $type = mysqli_real_escape_string($con, $input['type']);
+  $email = mysqli_real_escape_string($con, $input['email']);
+  $number = mysqli_real_escape_string($con, $input['number']);
 
-    // Validate email field
-    if (!empty($email)) {
-        // Insert form data into the database
-        // $query = mysqli_query($con, "INSERT INTO contactForm (type, name, email, text, status) VALUES ('$type', '$email', '$number', '1')");
+  // Validate email field
+  if (!empty($email)) {
+    // Insert form data into the database
+    // $query = mysqli_query($con, "INSERT INTO contactForm (type, name, email, text, status) VALUES ('$type', '$email', '$number', '1')");
 
-        if ($email) {
-            // Set up PHPMailer
-            $mail = new PHPMailer(true); // Enable exceptions
-            try {
-                $mail->isSMTP();
-                $mail->Host = 'smtp.hostinger.com';
-                $mail->SMTPAuth = true;
-                $mail->Username = 'jaldihire@mmworkspace.com';
-                $mail->Password = 'Jaldihire@321$#'; // Consider using environment variables for sensitive data
-                $mail->SMTPSecure = 'ssl';
-                $mail->Port = 465;
+    if ($email) {
+      // Set up PHPMailer
+      $mail = new PHPMailer(true); // Enable exceptions
+      try {
+        $mail->isSMTP();
+        $mail->Host = 'smtpout.secureserver.net';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'jaldihire@mmworkspace.com';
+        $mail->Password = 'Jaldihire@321$#'; // Consider using environment variables for sensitive data
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port = 465;
 
-                // Determine the type
-                $type = ($type === 'Employer') ? 'Customer' : (($type === 'Applicant') ? 'Jobseeker' : 'Freelancer');
+        // Determine the type
+        $type = ($type === 'Employer') ? 'Customer' : (($type === 'Applicant') ? 'Jobseeker' : 'Freelancer');
 
-                // Set email parameters
-                $mail->setFrom('jaldihire@mmworkspace.com', 'JALDHI HIRE');
-                $mail->addAddress('info@jaldihire.com'); // Recipient
-                $mail->addReplyTo('jaldihire@mmworkspace.com', 'JALDHI HIRE');
-                $mail->isHTML(true); // Set email format to HTML
+        // Set email parameters
+        $mail->setFrom('jaldihire@mmworkspace.com', 'JALDHI HIRE');
+        $mail->addAddress('info@jaldihire.com'); // Recipient
+        $mail->addReplyTo('jaldihire@mmworkspace.com', 'JALDHI HIRE');
+        $mail->isHTML(true); // Set email format to HTML
 
-                // Set the subject
-                $mail->Subject = "New request received from " . ($type ?: 'User');
+        // Set the subject
+        $mail->Subject = "New request received from " . ($type ?: 'User');
 
-                // Construct the HTML body of the email
-                $mail->Body = '
+        // Construct the HTML body of the email
+        $mail->Body = '
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     <html
@@ -566,8 +566,8 @@ function SendFooterMail()
                                 </h4>
                                 
           <p>
-            We have received a new query from '.$type.' through our website. Please review and respond to their request within the next 24 hours to ensure timely communication.
-Lead Details:<br/>Email :'.$email.'<br/>Mobile: '.$number.'
+            We have received a new query from ' . $type . ' through our website. Please review and respond to their request within the next 24 hours to ensure timely communication.
+Lead Details:<br/>Email :' . $email . '<br/>Mobile: ' . $number . '
           </p>
                               </td>
                             </tr>
@@ -785,28 +785,27 @@ Lead Details:<br/>Email :'.$email.'<br/>Mobile: '.$number.'
     <!--[if IE]></div><![endif]-->
   </body>
 </html> ';
-                $mail->AltBody = "Email: {$email}\nInterest: {$type}\nMessage: {$number}";
+        $mail->AltBody = "Email: {$email}\nInterest: {$type}\nMessage: {$number}";
 
-                // Send the email
-                if ($mail->send()) {
-                    echo json_encode(['status' => 'success', 'message' => 'Request submitted successfully!']);
-                } else {
-                    echo json_encode(['status' => 'error', 'message' => 'Failed to send email!']);
-                }
-            } catch (Exception $e) {
-                echo json_encode(['status' => 'error', 'message' => 'Mailer Error: ' . $mail->ErrorInfo]);
-            }
+        // Send the email
+        if ($mail->send()) {
+          echo json_encode(['status' => 'success', 'message' => 'Request submitted successfully!']);
         } else {
-            echo json_encode(['status' => 'error', 'message' => 'Failed to submit form data!']);
+          echo json_encode(['status' => 'error', 'message' => 'Failed to send email!']);
         }
+      } catch (Exception $e) {
+        echo json_encode(['status' => 'error', 'message' => 'Mailer Error: ' . $mail->ErrorInfo]);
+      }
     } else {
-        echo json_encode(['status' => 'error', 'message' => 'Please enter a valid email!']);
+      echo json_encode(['status' => 'error', 'message' => 'Failed to submit form data!']);
     }
+  } else {
+    echo json_encode(['status' => 'error', 'message' => 'Please enter a valid email!']);
+  }
 }
 
 // header('Content-Type: application/json'); 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    SendFooterMail();
+  SendFooterMail();
 }
-?>

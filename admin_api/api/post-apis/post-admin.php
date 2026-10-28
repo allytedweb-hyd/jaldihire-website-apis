@@ -6,14 +6,14 @@ ini_set('error_log', 'php_errors.log');
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 $allowed_origins = [
-  'https://jaldihire.com',
-  'https://admin.jaldihire.com',
-  'https://employer.jaldihire.com',
-  'https://applicant.jaldihire.com'
+    'https://jaldihire.com',
+    'https://admin.jaldihire.com',
+    'https://employer.jaldihire.com',
+    'https://applicant.jaldihire.com'
 ];
 
 if (in_array($origin, $allowed_origins)) {
-  header("Access-Control-Allow-Origin: $origin");
+    header("Access-Control-Allow-Origin: $origin");
 }
 header("Access-Control-Allow-Credentials: true");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
@@ -21,8 +21,8 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-W
 header("Content-Type: application/json; charset=UTF-8");
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-  http_response_code(204);
-  exit();
+    http_response_code(204);
+    exit();
 }
 
 try {
@@ -77,11 +77,11 @@ try {
         // Check if email exists
         $email_escaped = mysqli_real_escape_string($con, $email);
         $checkEmail = mysqli_query($con, "SELECT * FROM tbl_login WHERE login_mail = '$email_escaped'");
-        
+
         if (!$checkEmail) {
             throw new Exception("Database query error: " . mysqli_error($con));
         }
-        
+
         if (mysqli_num_rows($checkEmail) > 0) {
             echo json_encode(['status' => false, "message" => "Email Already Exists"]);
             exit();
@@ -90,7 +90,7 @@ try {
         // Insert admin
         $name_escaped = mysqli_real_escape_string($con, $name);
         $mobile_escaped = mysqli_real_escape_string($con, $mobile);
-        
+
         $insert_admin = mysqli_query($con, "INSERT INTO tbl_login SET 
             admin_name='$name_escaped',
             user_role='$role',
@@ -122,12 +122,12 @@ try {
 
         // Send email using PHPMailer
         $mail = new PHPMailer(true);
-        
+
         try {
             // Server settings
             $mail->SMTPDebug = 0; // Set to 2 for debugging
             $mail->isSMTP();
-            $mail->Host = 'smtp.hostinger.com';
+            $mail->Host = 'smtpout.secureserver.net';
             $mail->SMTPAuth = true;
             $mail->Username = 'admin@allytedhrms.cloud';
             $mail->Password = 'Allyted@2025';
@@ -135,16 +135,16 @@ try {
             $mail->Port = 465;
             $mail->Timeout = 30;
             $mail->CharSet = 'UTF-8';
-            
+
             // Recipients
             $mail->setFrom('admin@allytedhrms.cloud', 'JALDI HIRE');
             $mail->addAddress($email, $name);
             $mail->addReplyTo('admin@allytedhrms.cloud', 'JALDI HIRE');
-            
+
             // Content
             $mail->isHTML(true);
             $mail->Subject = 'Please select password for Admin login - Jaldi Hire';
-            
+
             // Email body
             $emailBody = '
             <!DOCTYPE html>
@@ -194,27 +194,26 @@ try {
                 </div>
             </body>
             </html>';
-            
+
             $mail->Body = $emailBody;
             $mail->AltBody = "Hello " . $name . ",\n\nWelcome to Jaldihire family!\nPlease select a password now to gain full access to your admin dashboard.\n\nLink: https://mmworkspace.com/test_jaldhihireadmin/admin-choose-password/index.php?adminId=" . $last_id . "\n\nRegards,\nJaldi Hire Team";
-            
+
             // Send email
             if (!$mail->send()) {
                 throw new Exception("Mailer Error: " . $mail->ErrorInfo);
             }
-            
+
             $response = [
-                'status' => true, 
+                'status' => true,
                 'message' => 'Admin created and email sent successfully',
                 'admin_id' => $last_id
             ];
-            
         } catch (Exception $e) {
             // Email failed but admin was created
             error_log("Mailer Error for admin ID $last_id: " . $e->getMessage());
-            
+
             $response = [
-                'status' => true, 
+                'status' => true,
                 'message' => 'Admin created successfully but email could not be sent',
                 'admin_id' => $last_id,
                 'email_error' => $e->getMessage()
@@ -223,7 +222,6 @@ try {
     }
 
     echo json_encode($response);
-
 } catch (Exception $e) {
     http_response_code(500);
     echo json_encode([
@@ -235,4 +233,3 @@ try {
     ]);
     error_log("API Error: " . $e->getMessage() . " in " . $e->getFile() . " on line " . $e->getLine());
 }
-?>

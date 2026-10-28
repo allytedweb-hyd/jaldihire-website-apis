@@ -44,16 +44,16 @@ if (isset($json) && !empty($json)) {
 
         $mail = new PHPMailer;
         $mail->isSMTP();
-        $mail->Host = 'smtp.hostinger.com';
+        $mail->Host = 'smtpout.secureserver.net';
         $mail->SMTPAuth = true;
-        $mail->Username = 'work@mmworkspace.com';
-        $mail->Password = 'Work@321#';
+        $mail->Username = 'info@allyted.com';
+        $mail->Password = 'Allyted@2026';
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
-        $mail->setFrom('work@mmworkspace.com', 'JALDHI HIRE');
+        $mail->setFrom('info@allyted.com', 'JALDHI HIRE');
         $mail->addAddress('info@example.com');
         // $mail->addAddress('anilcm016@gmail.com');
-        $mail->addReplyTo('work@mmworkspace.com', 'JALDHI HIRE');
+        $mail->addReplyTo('info@allyted.com', 'JALDHI HIRE');
 
         $mail->isHTML(true);
         $mail->Subject = 'Validity Expiry Notice';

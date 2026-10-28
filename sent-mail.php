@@ -11,43 +11,43 @@ require 'vendor/autoload.php';
 
 function SendMail()
 {
-        global $con;
+  global $con;
 
-        $date = date_default_timezone_set('Asia/kolkata');
-        $dateFormat = date('Y-m-d H:i:s');
+  $date = date_default_timezone_set('Asia/kolkata');
+  $dateFormat = date('Y-m-d H:i:s');
 
-        $email = mysqli_escape_string($con, $_POST['email']);
-        if (!empty($email)) {
-                // $query = mysqli_query($con, "INSERT INTO user_gamil SET gmail='" . $email . "',created_id='" . $dateFormat . "',updated_on=0,status=1");
-                $query = mysqli_query($con, "INSERT INTO user_gamil SET gmail='" . $email . "',created_id='" . $dateFormat . "',updated_id='0',status=1");
+  $email = mysqli_escape_string($con, $_POST['email']);
+  if (!empty($email)) {
+    // $query = mysqli_query($con, "INSERT INTO user_gamil SET gmail='" . $email . "',created_id='" . $dateFormat . "',updated_on=0,status=1");
+    $query = mysqli_query($con, "INSERT INTO user_gamil SET gmail='" . $email . "',created_id='" . $dateFormat . "',updated_id='0',status=1");
 
 
-                if ($query == true) {
+    if ($query == true) {
 
-                        $mail = new PHPMailer;
-                        $mail->isSMTP();
-                        $mail->Host = 'smtp.hostinger.com';
-                        $mail->SMTPAuth = true;
-                        $mail->Username = 'jaldihire@mmworkspace.com';
-                        $mail->Password = 'Jaldihire@321$#';
-                        $mail->SMTPSecure = 'ssl';
-                        $mail->Port = 465;
+      $mail = new PHPMailer;
+      $mail->isSMTP();
+      $mail->Host = 'smtpout.secureserver.net';
+      $mail->SMTPAuth = true;
+      $mail->Username = 'jaldihire@mmworkspace.com';
+      $mail->Password = 'Jaldihire@321$#';
+      $mail->SMTPSecure = 'ssl';
+      $mail->Port = 465;
 
-                        $mail->setFrom('jaldihire@mmworkspace.com', 'JALDHI HIRE');
-                        $mail->addAddress($email);
-                        $mail->addReplyTo('jaldihire@mmworkspace.com', 'JALDHI HIRE');
+      $mail->setFrom('jaldihire@mmworkspace.com', 'JALDHI HIRE');
+      $mail->addAddress($email);
+      $mail->addReplyTo('jaldihire@mmworkspace.com', 'JALDHI HIRE');
 
-                        $mail->isHTML(true);
-                        $mail->Subject = 'Jaldi Hire Request Submitted Successfully: Our Team Will Reach Out Shortly
+      $mail->isHTML(true);
+      $mail->Subject = 'Jaldi Hire Request Submitted Successfully: Our Team Will Reach Out Shortly
 ';
-                        $content = "Dear $email,<br>
+      $content = "Dear $email,<br>
                         Thank you for reaching out to Jaldi Hire.<br>
                         Our customer services team is currently reviewing your request and will get back to you within the next 24 hours. If, for any reason, you do not receive a response within this time, please feel free to contact our supervisor team at support@jaldihire.com.
                         We appreciate your interest and look forward to assisting you!<br>
                         Best regards,<br>
                         Customer Service,<br>
                         Jaldi Hire.";
-                        $mail->Body    = '
+      $mail->Body    = '
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!DOCTYPE html>
 <!DOCTYPE html>
@@ -204,49 +204,49 @@ function SendMail()
   
   ';
 
-                        if ($mail->send()) {
-                                sendinfomail();
-                                // showAlert("success", "Success", "Mail send  successfully!");
+      if ($mail->send()) {
+        sendinfomail();
+        // showAlert("success", "Success", "Mail send  successfully!");
 
-                        }
-                } else {
-                        showAlert("error", "Error", "Mail send  to Failed!");
+      }
+    } else {
+      showAlert("error", "Error", "Mail send  to Failed!");
 
-                        // echo "<script>alert('Failed')</script>";
-                }
-        } else {
-                showAlert("warning", "Warning", "Please Enter Your Valid Mail!");
-        }
+      // echo "<script>alert('Failed')</script>";
+    }
+  } else {
+    showAlert("warning", "Warning", "Please Enter Your Valid Mail!");
+  }
 }
 
 function sendinfomail()
 {
-        global $con;
-        $email = mysqli_escape_string($con, $_POST['email']);
+  global $con;
+  $email = mysqli_escape_string($con, $_POST['email']);
 
-        $mail = new PHPMailer;
-        $mail->isSMTP();
-        $mail->Host = 'smtp.hostinger.com';
-        $mail->SMTPAuth = true;
-        $mail->Username = 'jaldihire@mmworkspace.com';
-        $mail->Password = 'Jaldihire@321$#';
-        $mail->SMTPSecure = 'ssl';
-        $mail->Port = 465;
+  $mail = new PHPMailer;
+  $mail->isSMTP();
+  $mail->Host = 'smtpout.secureserver.net';
+  $mail->SMTPAuth = true;
+  $mail->Username = 'jaldihire@mmworkspace.com';
+  $mail->Password = 'Jaldihire@321$#';
+  $mail->SMTPSecure = 'ssl';
+  $mail->Port = 465;
 
-        $mail->setFrom('jaldihire@mmworkspace.com', 'JALDHI HIRE');
-        $mail->addAddress('info@jaldihire.com');
-        $mail->addReplyTo('jaldihire@mmworkspace.com', 'JALDHI HIRE');
+  $mail->setFrom('jaldihire@mmworkspace.com', 'JALDHI HIRE');
+  $mail->addAddress('info@jaldihire.com');
+  $mail->addReplyTo('jaldihire@mmworkspace.com', 'JALDHI HIRE');
 
-        $mail->isHTML(true);
-        $mail->Subject = ' New Customer /Freelancer/Jobseeker Query Received – Please Respond Within 24 Hours';
-        $content = "Dear Support Team,<br>
+  $mail->isHTML(true);
+  $mail->Subject = ' New Customer /Freelancer/Jobseeker Query Received – Please Respond Within 24 Hours';
+  $content = "Dear Support Team,<br>
         We have received a new query from $email through our website. Please review and respond to their request within the next 24 hours to ensure timely communication.
         Lead Details:<br>
         •Email :$email<br>
         Let's ensure we provide them with the best possible experience!<br>
         Thank you,<br>
         Jaldi Hire Team";
-        $mail->Body    = '
+  $mail->Body    = '
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!DOCTYPE html>
 <!DOCTYPE html>
@@ -402,7 +402,7 @@ border: 3px solid #f7f7f7;
 </html>
 
 ';
-        if ($mail->send()) {
-                showAlert("success", "Success", "Mail send  successfully!");
-        }
+  if ($mail->send()) {
+    showAlert("success", "Success", "Mail send  successfully!");
+  }
 }

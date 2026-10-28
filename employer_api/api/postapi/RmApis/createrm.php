@@ -143,7 +143,7 @@ if (isset($json) && !empty($json)) {
         $headers = "MIME-Version: 1.0\r\n";
         $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
         $mail->isSMTP(); // Set mailer to use SMTP
-        $mail->Host = 'smtp.hostinger.com'; // Specify main and backup SMTP servers
+        $mail->Host = 'smtpout.secureserver.net'; // Specify main and backup SMTP servers
         $mail->SMTPAuth = true; // Enable SMTP authentication
         $mail->Username = 'jaldihireteam@mmworkspace.com'; // SMTP username
         $mail->Password = 'Jaldihire@321$#'; // SMTP password

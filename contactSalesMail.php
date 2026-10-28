@@ -12,50 +12,50 @@ require 'vendor/autoload.php';
 
 function SalesContactMail()
 {
-    global $con;
+  global $con;
 
-    // Read the JSON input
-    $input = json_decode(file_get_contents("php://input"), true);
+  // Read the JSON input
+  $input = json_decode(file_get_contents("php://input"), true);
 
-    // Sanitize input
-     $fname = mysqli_escape_string($con, $input['fname']);
-    $yourname = mysqli_escape_string($con, $input['yourname']);
-    $role = mysqli_escape_string($con, $input['role']);
-    $email = mysqli_escape_string($con, $input['email']);
-    $number = mysqli_escape_string($con, $input['number']);
-    $date = mysqli_escape_string($con, $input['date']);
-    $time = mysqli_escape_string($con, $input['time']);
+  // Sanitize input
+  $fname = mysqli_escape_string($con, $input['fname']);
+  $yourname = mysqli_escape_string($con, $input['yourname']);
+  $role = mysqli_escape_string($con, $input['role']);
+  $email = mysqli_escape_string($con, $input['email']);
+  $number = mysqli_escape_string($con, $input['number']);
+  $date = mysqli_escape_string($con, $input['date']);
+  $time = mysqli_escape_string($con, $input['time']);
 
-    // Validate email field
-    if (!empty($email)) {
-       $query = mysqli_query($con, "INSERT INTO requestdemo SET comapany_name='" . $fname . "',name='" . $yourname . "',role='" . $role . "',number='" . $number . "',date='" . $date . "',time='" . $time . "',work_mail='" . $email . "',status=1");
+  // Validate email field
+  if (!empty($email)) {
+    $query = mysqli_query($con, "INSERT INTO requestdemo SET comapany_name='" . $fname . "',name='" . $yourname . "',role='" . $role . "',number='" . $number . "',date='" . $date . "',time='" . $time . "',work_mail='" . $email . "',status=1");
 
-        if ($query) {
-            // Set up PHPMailer
-            $mail = new PHPMailer(true); // Enable exceptions
-            try {
-                $mail->isSMTP();
-                $mail->Host = 'smtp.hostinger.com';
-                $mail->SMTPAuth = true;
-                $mail->Username = 'jaldihire@mmworkspace.com';
-                $mail->Password = 'Jaldihire@321$#'; // Consider using environment variables for sensitive data
-                $mail->SMTPSecure = 'ssl';
-                $mail->Port = 465;
+    if ($query) {
+      // Set up PHPMailer
+      $mail = new PHPMailer(true); // Enable exceptions
+      try {
+        $mail->isSMTP();
+        $mail->Host = 'smtpout.secureserver.net';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'jaldihire@mmworkspace.com';
+        $mail->Password = 'Jaldihire@321$#'; // Consider using environment variables for sensitive data
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port = 465;
 
-                // Determine the type
-         
+        // Determine the type
 
-                // Set email parameters
-                $mail->setFrom('jaldihire@mmworkspace.com', 'JALDHI HIRE');
-                $mail->addAddress('sales@jaldihire.com'); // Recipient
-                $mail->addReplyTo('jaldihire@mmworkspace.com', 'JALDHI HIRE');
-                $mail->isHTML(true); // Set email format to HTML
 
-                // Set the subject
-                $mail->Subject = "New Customer Demo Request on $date. Please respond Immediately";
+        // Set email parameters
+        $mail->setFrom('jaldihire@mmworkspace.com', 'JALDHI HIRE');
+        $mail->addAddress('sales@jaldihire.com'); // Recipient
+        $mail->addReplyTo('jaldihire@mmworkspace.com', 'JALDHI HIRE');
+        $mail->isHTML(true); // Set email format to HTML
 
-                // Construct the HTML body of the email
-                $mail->Body = '
+        // Set the subject
+        $mail->Subject = "New Customer Demo Request on $date. Please respond Immediately";
+
+        // Construct the HTML body of the email
+        $mail->Body = '
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     <html
@@ -569,9 +569,9 @@ function SalesContactMail()
                                 </h4>
                                 
           <p>
-           We have received a request for a demo from  '.$fname.' through our website.
-For '. $date .' and slot('. $time .') 
-Lead Details:<br/>Name:'. $fname.' <br>Email :'.$email.'<br/>Demo date: '. $date .'<br/>Time: '. $time .'
+           We have received a request for a demo from  ' . $fname . ' through our website.
+For ' . $date . ' and slot(' . $time . ') 
+Lead Details:<br/>Name:' . $fname . ' <br>Email :' . $email . '<br/>Demo date: ' . $date . '<br/>Time: ' . $time . '
           </p>
                               </td>
                             </tr>
@@ -789,28 +789,27 @@ Lead Details:<br/>Name:'. $fname.' <br>Email :'.$email.'<br/>Demo date: '. $date
     <!--[if IE]></div><![endif]-->
   </body>
 </html> ';
-                $mail->AltBody = "Name: {$fname}\nEmail: {$email}\nInterest: {$date}\nMessage: {$time}";
+        $mail->AltBody = "Name: {$fname}\nEmail: {$email}\nInterest: {$date}\nMessage: {$time}";
 
-                // Send the email
-                if ($mail->send()) {
-                    echo json_encode(['status' => 'success', 'message' => 'Request submitted successfully!']);
-                } else {
-                    echo json_encode(['status' => 'error', 'message' => 'Failed to send email!']);
-                }
-            } catch (Exception $e) {
-                echo json_encode(['status' => 'error', 'message' => 'Mailer Error: ' . $mail->ErrorInfo]);
-            }
+        // Send the email
+        if ($mail->send()) {
+          echo json_encode(['status' => 'success', 'message' => 'Request submitted successfully!']);
         } else {
-            echo json_encode(['status' => 'error', 'message' => 'Failed to submit form data!']);
+          echo json_encode(['status' => 'error', 'message' => 'Failed to send email!']);
         }
+      } catch (Exception $e) {
+        echo json_encode(['status' => 'error', 'message' => 'Mailer Error: ' . $mail->ErrorInfo]);
+      }
     } else {
-        echo json_encode(['status' => 'error', 'message' => 'Please enter a valid email!']);
+      echo json_encode(['status' => 'error', 'message' => 'Failed to submit form data!']);
     }
+  } else {
+    echo json_encode(['status' => 'error', 'message' => 'Please enter a valid email!']);
+  }
 }
 
 // header('Content-Type: application/json'); 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    SalesContactMail();
+  SalesContactMail();
 }
-?>

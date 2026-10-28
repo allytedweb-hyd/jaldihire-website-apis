@@ -67,14 +67,14 @@ if (isset($json) && !empty($json)) {
     $mail = new PHPMailer;
 
     $mail->isSMTP(); // Set mailer to use SMTP
-    $mail->Host = 'smtp.hostinger.com'; // Specify main and backup SMTP servers
+    $mail->Host = 'smtpout.secureserver.net'; // Specify main and backup SMTP servers
     $mail->SMTPAuth = true; // Enable SMTP authentication
-    $mail->Username = 'work@mmworkspace.com'; // SMTP username
-    $mail->Password = 'Work@321#'; // SMTP password
+    $mail->Username = 'info@allyted.com'; // SMTP username
+    $mail->Password = 'Allyted@2026'; // SMTP password
     $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 465; // TCP port to connect to
 
-    $mail->setFrom('work@mmworkspace.com', 'JALDHI HIRE');
+    $mail->setFrom('info@allyted.com', 'JALDHI HIRE');
     $mail->addAddress($email); // Add a recipient
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC($cc);
